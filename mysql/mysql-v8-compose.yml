@@ -1,12 +1,21 @@
-version: '3.1'
+version: '3.7'
 services:
   mysql-v8:
     # replace username/repo:tag with your name and image details
     image: mysql/mysql-server:8.0
-    restart: always
+    # container_name: mysql-v8
+    # restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "Wf3977696"
     volumes:
       - /opt/docker-data/mysql-datadir:/var/lib/mysql
     ports:
       - "3306:3306"
+    # command: ["docker", "system", "prune", "-f"]
+    healthcheck:
+      test: ["docker", "system", "prune", "-f"]
+      #test: echo ">>>>>>>>>>>>>>>"
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      #start_period: 40s
