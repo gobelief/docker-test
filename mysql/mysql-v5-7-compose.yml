@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  mysql-v8:
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: "Wf3977696"
+    volumes:
+      - /opt/docker-data/mysql-v5-7-datadir:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - default
