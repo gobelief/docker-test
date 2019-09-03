@@ -19,8 +19,10 @@
 >json函数创建的类型都是json,但是可用类型转换转换为jsonb。json不能直接创建索引,但可以创建函数索引。jsonb可以直接创建索引:BTree、GIN,GIN索引可以高效的从jsonb内部的key/value中搜索数据,BTree只是简单的按照整个jsonb的大小方式索引,原则如下:
 >* Object>Array>Boolean>Number>String>Null
 >* 前面的数据比后面的数据大  
->创建GIN索引方式有两种:jsonb_ops（default）,jsonb_path_ops
+
+>创建GIN索引方式有两种:jsonb_ops（default）,jsonb_path_ops  
 ```CREATE INDEX index_name ON table_name USING gin (index_col [jsonb_path_ops])```
+>默认的索引方式,每个key/value都是作为一个单独的索引项,jsonb_path_ops根据key/value组成一个hash值作为索引,所有通常json_path_ops的索引要比默认的索引值小很多,也就会提升一定的性能
 ### 类型转换语法
 ``` 
   type value | value::type
