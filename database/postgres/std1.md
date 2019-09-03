@@ -16,6 +16,7 @@
 >* 同事务:current_date(当前日期),current_time(当日时间),current_timestamp/now(当前事务开始时间戳);当日真实时间:clock_timestamp
 >* extract,date_part
 ### json与jsonb区别
+>json类型存储直接存储原值,jsonb会解析成二进制格式,在使用时就不需要再次解析,索引jsonb的性能会更高。  
 >json函数创建的类型都是json,但是可用类型转换转换为jsonb。json不能直接创建索引,但可以创建函数索引。jsonb可以直接创建索引:BTree、GIN,GIN索引可以高效的从jsonb内部的key/value中搜索数据,BTree只是简单的按照整个jsonb的大小方式索引,原则如下:
 >* Object>Array>Boolean>Number>String>Null
 >* 前面的数据比后面的数据大
