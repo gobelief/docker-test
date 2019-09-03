@@ -6,6 +6,7 @@
 >* 日期:date,timestamp,interval,time
 >* 货币:money
 >* json/jsonp,xml  
+>* enum
 ### 数据类型描述
 >* 整型:serial(自增ID,4B),bigserial(自增ID,8B),smallint(2B),int(4B),bigint(8B)
 >* 浮点型:decimal/numeric(变长,精度准确),real(4B),double precision(8B)
