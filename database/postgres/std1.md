@@ -32,3 +32,9 @@
 >索引：GIST、SP-GIST、BTree(通常在排序时使用)
 >约束：范围不重叠代码片段  
 ```EXCLUDE USING gist (col_name WITH &&)```
+### 常用运算符
+>@>：包含于  
+>-|-：连接在一起  
+>->：json取值  
+>&&：重叠
+>||：数组连接
