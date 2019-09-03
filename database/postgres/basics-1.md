@@ -38,3 +38,16 @@
 >->：json取值  
 >&&：重叠  
 >||：数组连接
+### 模式
+>postgres中的schema就相当于mysql中的数据库,mysql的数据库在有些连接工具上显示的就是schema。postgres是不支持跨表查询,该功能就是通过模式来实现,通常来讲,查询表会在对应的的用户模式下查询,查询不到在查询public模式下的表,可通过```show search_path ;```查看
+### TOAST存储属性
+>只有变长属性支持TOAST,前4B(32Bit)为长度字,前2(Bit),一个表示压缩,一个表示是否行外存储,后30(Bit)位长度。如果一个表中有字段是可以TOAST的,会自动创建一个相关联的TOAST表,行外的内容存储在TOAST表里,其OID存储在表的pg_class.reltoastrelid记录里
+### 临时表
+>```CREATE TEMPORARY TABLE table_name(...) [action]``` action:    
+>* ON COMMIT PRESERVE ROEWS：默认,会话级别
+>* ON COMMIT DELETE ROWS：事务级别,事务结束数据消失
+>* ON COMMIT DROP：事务级别,事务结束表消失
+### 表继承及分区表
+>创建表时使用INHERITS关键字,子表数据父表可看。  
+>分区表使用表继承实现,可在分区表创建索引,分表使用约束,查询WHERE语句过滤条件与表上的CHECK比对,可得到相应的表。  
+>分区表参数：constranint_exclusion值partition  
