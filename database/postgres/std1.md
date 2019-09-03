@@ -5,7 +5,7 @@
 >* 字符串:varchar,char,text
 >* 日期:date,timestamp,interval,time
 >* 货币:money
->* json/jsonp,xml  
+>* json/jsonb,xml  
 >* enum
 ### 数据类型描述
 >* 整型:serial(自增ID,4B),bigserial(自增ID,8B),smallint(2B),int(4B),bigint(8B)
@@ -15,6 +15,12 @@
 ### 常用日期/日期函数
 >* 同事务:current_date(当前日期),current_time(当日时间),current_timestamp/now(当前事务开始时间戳);当日真实时间:clock_timestamp
 >* extract,date_part
+### json与jsonb区别
+>json函数创建的类型都是json,但是可用类型转换转换为jsonb。json不能直接创建索引,但可以创建函数索引。jsonb可以直接创建索引:BTree、GIN,GIN索引可以高效的从jsonb内部的key/value中搜索数据,BTree只是简单的按照整个jsonb的大小方式索引,原则如下:
+>* Object>Array>Boolean>Number>String>Null
+>* 前面的数据比后面的数据大  
+>创建GIN索引方式有两种:jsonb_ops（default）,jsonb_path_ops
+```CREATE INDEX index_name ON table_name USING gin (index_col [jsonb_path_ops])```
 ### 类型转换语法
 ``` 
   type value | value::type
