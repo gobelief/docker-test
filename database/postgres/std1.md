@@ -22,8 +22,8 @@
 >* 前面的数据比后面的数据大
 
 >创建GIN索引方式有两种:jsonb_ops（default）,jsonb_path_ops  
-```CREATE INDEX index_name ON table_name USING gin (index_col [jsonb_path_ops])```
->默认的索引方式,每个key/value都是作为一个单独的索引项,jsonb_path_ops根据key/value组成一个hash值作为索引,所有通常json_path_ops的索引要比默认的索引值小很多,也就会提升一定的性能  
+```CREATE INDEX index_name ON table_name USING gin (index_col [jsonb_path_ops])```  
+>默认的索引方式:每个key/value都是作为一个单独的索引项,jsonb_path_ops根据key/value组成一个hash值作为索引,所有通常json_path_ops的索引要比默认的索引值小很多,也就会提升一定的性能  
 >函数索引创建：```CREATE INDEX ON table_name USING btree (json_extract_path_text(col_name,attr_name))```
 ### 类型转换语法
 ``` 
