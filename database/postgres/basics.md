@@ -40,3 +40,5 @@
 >||：数组连接
 ### 模式
 >postgres中的schema就相当于mysql中的数据库,mysql的数据库在有些连接工具上显示的就是schema。postgres是不支持跨表查询,该功能就是通过模式来实现,通常来讲,查询表会在对应的的用户模式下查询,查询不到在查询public模式下的表,可通过```show search_path ;```查看
+### TOAST存储属性
+只有变长属性支持TOAST,前4B(32Bit)为长度字,前2(Bit),一个表示压缩,一个表示是否行外存储,后30(Bit)位长度。如果一个表中有字段是可以TOAST的,会自动创建一个相关联的TOAST表,行外的内容存储在TOAST表里,其OID存储在表的pg_class.reltoastrelid记录里
