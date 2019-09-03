@@ -47,3 +47,7 @@
 >* ON COMMIT PRESERVE ROEWS：默认,会话级别
 >* ON COMMIT DELETE ROWS：事务级别,事务结束数据消失
 >* ON COMMIT DROP：事务级别,事务结束表消失
+### 表继承及分区表
+>创建表时使用INHERITS关键字,子表数据父表可看。
+>分区表使用表继承实现,可在分区表创建索引,分表使用约束,查询WHERE语句过滤条件与表上的CHECK比对,可得到相应的表。
+>分区表参数：constranint_exclusion值partition
