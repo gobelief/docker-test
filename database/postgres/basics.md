@@ -38,3 +38,5 @@
 >->：json取值  
 >&&：重叠  
 >||：数组连接
+### 模式
+>postgres中的schema就相当于mysql中的数据库,mysql的数据库在有些连接工具上显示的就是schema。postgres是不支持跨表查询,该功能就是通过模式来实现,通常来讲,查询表会在对应的的用户模式下查询,查询不到在查询public模式下的表,可通过```show search_path ;```查看
