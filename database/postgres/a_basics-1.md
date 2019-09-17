@@ -2,7 +2,7 @@
 ### 常用数据类型
 >* 整型：serial,bigserial,smallint,int,bigint
 >* 浮点型：decimal/numeric,real,double precision
->* 字符串：varchar,char,text
+>* 字符串：varchar,char,text    (用$$包裹表示文本字符串常量)
 >* 日期：date,timestamp,interval,time
 >* 货币：money
 >* 其它：json/jsonb,xml,enum,range
