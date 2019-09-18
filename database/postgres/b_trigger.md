@@ -59,3 +59,13 @@ CREATE [ OR REPLACE ] FUNCTION
   } ...
 
 ```
+## 事件触发器
+### 语法
+```
+Description: define a new event trigger
+Syntax:
+CREATE EVENT TRIGGER name
+    ON event
+    [ WHEN filter_variable IN (filter_value [, ... ]) [ AND ... ] ]
+    EXECUTE { FUNCTION | PROCEDURE } function_name()
+```
