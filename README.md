@@ -1,11 +1,12 @@
-# docker-test脚本部署
+# docker-test鑴氭湰閮ㄧ讲
 >docker swarm init  
 >docker stack deploy XXXX.yml XXX
-# 常用的数据库链接工具
+# 甯哥敤鐨勬暟鎹簱閾炬帴宸ュ叿
 * Sqlyog
 * Heidisql
 * Datagrip
 * Navicat
-# 常用的GIT链接工具
+# 甯哥敤鐨凣IT閾炬帴宸ュ叿
 * Sourcetree
 * TortoiseGit
+* GitKraken
