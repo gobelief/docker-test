@@ -1,5 +1,6 @@
 github.com
 gist.github.com
+github.global.ssl.fastly.net
 assets-cdn.github.com
 raw.githubusercontent.com
 gist.githubusercontent.com
