@@ -6,7 +6,7 @@ import (
 	"os"
 )
 func ReadHost() {
-	fmt.Println("Hello world")
+	fmt.Println("=== 配置githubDNS ===")
 
 	file,err := os.Open("./github_domain.txt")
 	if err == nil {
