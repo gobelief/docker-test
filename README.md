@@ -10,3 +10,7 @@
 * Sourcetree
 * TortoiseGit
 * GitKraken
+# CI/CD工具
+* Drone
+* Jenkins
+* CloudBees
