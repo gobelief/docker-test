@@ -7,7 +7,7 @@ services:
         ports:
             - "5432:5432"
         environment:
-            POSTGRES_PASSWORD: postgres
+            POSTGRES_PASSWORD: hd12SDFweF
         networks:
             - default
 
