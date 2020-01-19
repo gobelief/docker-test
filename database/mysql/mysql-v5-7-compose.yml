@@ -1,9 +1,10 @@
 version: '3.7'
 services:
-  mysql-v8:
+  mysql-v5:
     image: mysql/mysql-server:5.7
+    container_name: mysql-v8
     environment:
-      MYSQL_ROOT_PASSWORD: "Wf3977696"
+      MYSQL_ROOT_PASSWORD: "oc%x6ZKym"
     volumes:
       - /opt/docker-data/mysql-v5-7-datadir:/var/lib/mysql
     ports:
