@@ -6,6 +6,8 @@
 * Heidisql
 * Datagrip
 * Navicat
+* Dbvisualizer
+* FlySpeed SQL Query
 # 常用的GIT链接工具
 * Sourcetree
 * TortoiseGit
