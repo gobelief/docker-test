@@ -8,6 +8,9 @@
 * Navicat
 * Dbvisualizer
 * FlySpeed SQL Query
+# 数据库建模工具
+* Dbschema
+* PowerDesigner
 # 常用的GIT链接工具
 * Sourcetree
 * TortoiseGit
